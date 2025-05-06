@@ -1,0 +1,2 @@
+# requirements.txt for Milvus Python SDK
+pymilvus==2.4.4
