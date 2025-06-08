@@ -18,7 +18,7 @@ print("Chroma DB client initialized.")
 print(f"Client version: {chromadb.__version__}")
 print("Persistent data will be stored in: ./chroma_db")
 
-# --- Example Usage (Commented Out) ---
+#tell me Bally
 
 # To use Chroma DB, you typically work with collections.
 # A collection is a group of embeddings.
