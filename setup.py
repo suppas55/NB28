@@ -1,9 +1,9 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="nb28",
     version="0.1.0",
-    packages=find_packages(),
+    packages=["tests"],
     install_requires=[
         "chromadb",
         "fastapi",

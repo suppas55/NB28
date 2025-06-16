@@ -28,10 +28,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["NB28", "tests"]
-
-[tool.setuptools.package-data]
-NB28 = ["*.py"]
+packages = ["tests"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
