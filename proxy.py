@@ -31,7 +31,9 @@ async def health_check():
             if resp.status_code == 200:
                 return {"status": "healthy", "backend": "connected"}
             logger.warning(
-                f"Backend health check returned status {resp.status_code}"
+                "Backend health check returned status %s: %s",
+                resp.status_code,
+                resp.text,
             )
             return {"status": "degraded", "backend": "error"}
     except Exception as e:
