@@ -28,7 +28,12 @@ async def health_check():
     try:
         async with httpx.AsyncClient(timeout=5.0) as client:
             resp = await client.get(f"{BACKEND}/health")
-            return {"status": "healthy", "backend": "connected"}
+            if resp.status_code == 200:
+                return {"status": "healthy", "backend": "connected"}
+            logger.warning(
+                f"Backend health check returned status {resp.status_code}"
+            )
+            return {"status": "degraded", "backend": "error"}
     except Exception as e:
         logger.warning(f"Backend health check failed: {e}")
         return {"status": "degraded", "backend": "disconnected"}
